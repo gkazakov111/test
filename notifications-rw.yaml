@@ -1,0 +1,44 @@
+server:
+
+  applicationConnectors:
+    - type: http
+      port: 12030
+
+  adminConnectors:
+      - type: http
+        port: 12031
+
+  requestLog:
+    appenders:
+      - type: console
+        # The timezone used to format dates. HINT: USE THE DEFAULT, UTC.
+        timeZone: UTC
+
+
+logging:
+
+  level: INFO
+
+  loggers:
+    io.dropwizard: DEBUG
+
+  appenders:
+    - type: console
+      logFormat: "%-5p [%d{ISO8601, GMT}] %c: %X{transaction_id} %m [%thread]%n%xEx"
+
+notificationsStore:
+  addresses: ["localhost:27017"]
+  db: upp-store
+  collection: notifications
+
+notificationsRead:
+  maxResults: 200232232323
+  contentCacheMaxAge: 1
+  defaultApiPath: api.ft.com
+  allowedSearchWindow: 90 days
+  nodeId: 00000000
+  maxNodeSkew: 2 minutes
+
+appInfo:
+  systemCode: "notifications-rw"
+  description: "NotificationsRWApplication"
