@@ -7,7 +7,7 @@
 
     <artifactId>notifications-rw</artifactId>
     <groupId>com.ft.notificationsrw</groupId>
-    <version>3.0-SNAPSHOT</version>
+    <version>4.0-SNAPSHOT</version>
 
     <name>Notifications Reader-Writer</name>
     <url>http://www.ft.com</url>
